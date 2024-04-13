@@ -28,11 +28,9 @@ public class SlimeBallProjectile : MonoBehaviour
         Ability currentAbility = Player.instance.GetAbility();
         if (currentAbility.GetType() == typeof(SlimeBall))
         {
-            return;
+            SlimeBall ball = (SlimeBall)currentAbility;
+            ball.RemoveBall();
         }
-
-        SlimeBall ball = (SlimeBall)currentAbility;
-        ball.RemoveBall();
 
         Vector2 spawnPos = transform.position;
         spawnPos.y = Mathf.Ceil(spawnPos.y);
