@@ -25,9 +25,14 @@ public class SlimeBallProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        SlimeBall ball = (SlimeBall)Player.instance.GetAbility();
-        ball.RemoveBall();
+        Ability currentAbility = Player.instance.GetAbility();
+        if (currentAbility.GetType() == typeof(SlimeBall))
+        {
+            return;
+        }
 
+        SlimeBall ball = (SlimeBall)currentAbility;
+        ball.RemoveBall();
 
         Vector2 spawnPos = transform.position;
         spawnPos.y = Mathf.Ceil(spawnPos.y);

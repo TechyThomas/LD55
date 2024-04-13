@@ -27,7 +27,10 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentAbility = new Sword();
+
+        Ability startAbility = new Sword();
+        currentAbility = startAbility;
+        Inventory.instance.AddAbility(startAbility);
     }
 
     void Awake()

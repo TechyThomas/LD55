@@ -21,5 +21,7 @@ public class SlimeBoss : EnemyBoss
     public override void GivePlayerAbility()
     {
         base.GivePlayerAbility();
+
+        Inventory.instance.AddAbility(new SlimeBall());
     }
 }
