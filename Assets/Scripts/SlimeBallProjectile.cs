@@ -25,10 +25,10 @@ public class SlimeBallProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Ability currentAbility = Player.instance.GetAbility();
-        if (currentAbility.GetType() == typeof(SlimeBall))
+        int index = Inventory.instance.abilities.FindIndex(a => a.GetType() == typeof(SlimeBall));
+        if (index >= 0)
         {
-            SlimeBall ball = (SlimeBall)currentAbility;
+            SlimeBall ball = (SlimeBall)Inventory.instance.abilities[index];
             ball.RemoveBall();
         }
 

@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
         Ability startAbility = new Sword();
         currentAbility = startAbility;
         Inventory.instance.AddAbility(startAbility);
+        UI_Hotbar.instance.SetActive(0);
     }
 
     void Awake()

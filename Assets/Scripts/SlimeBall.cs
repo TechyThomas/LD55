@@ -17,6 +17,8 @@ public class SlimeBall : Ability
 
     public override void Attack()
     {
+        Debug.Log(currentBalls);
+
         if (currentBalls >= maxBalls)
         {
             return;
@@ -32,5 +34,10 @@ public class SlimeBall : Ability
     public void RemoveBall()
     {
         currentBalls--;
+
+        if (currentBalls < 0)
+        {
+            currentBalls = 0;
+        }
     }
 }
