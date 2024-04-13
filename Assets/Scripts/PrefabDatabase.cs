@@ -15,6 +15,8 @@ public class PrefabDatabase : MonoBehaviour
     }
 
     public GameObject SWORD_ATTACK;
+
+    public GameObject SLIME_ENEMY;
     public GameObject SLIME_BALL;
     public GameObject SLIME_TRAP;
 }

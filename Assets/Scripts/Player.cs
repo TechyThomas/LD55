@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentAbility = new SlimeBall();
+        currentAbility = new Sword();
     }
 
     void Awake()
