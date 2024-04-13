@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SWORD_ATTACK: {fileID: 4571263095850984999, guid: 67de8a068138b96418321f058fe719b0, type: 3}
+  SLIME_BALL: {fileID: 8145018414833386286, guid: b4019e5df7809eb4eb1fd1ff63545f32, type: 3}
+  SLIME_TRAP: {fileID: 6226091018701505893, guid: 3405c3dba33bc084596a0d0729fbf14a, type: 3}
 --- !u!4 &172006068
 Transform:
   m_ObjectHideFlags: 0
@@ -318,24 +320,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1339689845 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8029940294290889009, guid: 09eae31f538f71b4ba4fefbaa134fa06, type: 3}
-  m_PrefabInstance: {fileID: 831756303484353209}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1339689850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339689845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e0b6dda94e3084b87f5beec561bc9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!1 &1529190354
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,10 +1066,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8029940294290889009, guid: 09eae31f538f71b4ba4fefbaa134fa06, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1339689850}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09eae31f538f71b4ba4fefbaa134fa06, type: 3}
 --- !u!1001 &2836269299626474354
 PrefabInstance:
