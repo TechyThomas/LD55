@@ -116,4 +116,11 @@ public class Player : MonoBehaviour
     {
         return rb.position;
     }
+
+    public int GetLayerMask()
+    {
+        int layerMask = 1 << gameObject.layer;
+
+        return layerMask;
+    }
 }
