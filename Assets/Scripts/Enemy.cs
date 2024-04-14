@@ -61,8 +61,8 @@ public class Enemy : MonoBehaviour
 
                 if (cooldownTimer <= 0f)
                 {
-                    foundPlayer.GetComponent<Health>().TakeDamage(attack);
                     cooldownTimer = attackCooldown;
+                    Attack();
                 }
             }
             else
@@ -118,16 +118,19 @@ public class Enemy : MonoBehaviour
 
             rb.velocity = new Vector2(direction * speed, rb.velocity.y);
         }
-        // else {
-        //     if (Physics2D.)
-
-        //     rb.velocity = new Vector2(direction * speed, rb.velocity.y);
-        // }
     }
 
     public virtual void Attack()
     {
+        if (foundPlayer != null)
+        {
+            foundPlayer.GetComponent<Health>().TakeDamage(attack);
+        }
 
+        if (aiType == EnemyAIType.PLAYER_TARGET)
+        {
+            Player.Instance.AddKnockback();
+        }
     }
 
     public void SetMove(bool canMove)

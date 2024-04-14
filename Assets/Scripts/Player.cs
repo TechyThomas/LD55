@@ -32,6 +32,11 @@ public class Player : MonoBehaviour
     }
 
     float attackCooldown = 0f;
+
+    float maxKnockbackTimer = 0.5f;
+    float knockbackTimer;
+    bool isKnockback = false;
+
     bool canMove = true;
 
     int direction = 1;
@@ -64,6 +69,17 @@ public class Player : MonoBehaviour
         Jump();
         GroundCheck();
         DoAttack();
+
+        if (isKnockback)
+        {
+            knockbackTimer -= Time.deltaTime;
+
+            if (knockbackTimer <= 0f)
+            {
+                isKnockback = false;
+                canMove = true;
+            }
+        }
     }
 
     void FixedUpdate()
@@ -185,5 +201,23 @@ public class Player : MonoBehaviour
     {
         this.canMove = canMove;
         rb.isKinematic = !canMove;
+    }
+
+    public void AddKnockback()
+    {
+        knockbackTimer = maxKnockbackTimer;
+
+        isKnockback = true;
+        canMove = false;
+
+        StartCoroutine(DoKnockback());
+    }
+
+    IEnumerator DoKnockback()
+    {
+        yield return new WaitForNextFrameUnit();
+
+        rb.velocity = Vector2.zero;
+        rb.AddForce(new Vector2(6f * -direction, 0f), ForceMode2D.Impulse);
     }
 }
