@@ -17,5 +17,8 @@ public class MapBossTrigger : MonoBehaviour
     {
         boss.SetActive(true);
         doorTileMap.SetActive(true);
+
+
+        gameObject.SetActive(false);
     }
 }

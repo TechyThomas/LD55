@@ -35,6 +35,7 @@ public class BoneProjectile : MonoBehaviour
         if (health != null)
         {
             health.TakeDamage(damage);
+            Player.Instance.AddKnockback();
         }
 
         Destroy(gameObject);
