@@ -11,6 +11,9 @@ public class Health : MonoBehaviour
     public delegate void OnDeath();
     public OnDeath onDeath;
 
+    public delegate void OnHit();
+    public OnHit onHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,12 @@ public class Health : MonoBehaviour
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
+
+        if (onHit != null)
+        {
+            onHit();
+        }
+
         if (currentHealth <= 0f)
         {
             Die();

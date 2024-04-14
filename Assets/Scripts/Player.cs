@@ -36,6 +36,9 @@ public class Player : MonoBehaviour
 
     int direction = 1;
 
+    public List<AudioClip> hurtSounds;
+    public AudioClip deathSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +52,9 @@ public class Player : MonoBehaviour
         UI_Hotbar.Instance.SetActive(0);
         UI_Hotbar.Instance.SetSlot(1, null);
         UI_Hotbar.Instance.SetSlot(2, null);
+
+        GetComponent<Health>().onHit += Hit;
+        GetComponent<Health>().onDeath += Die;
     }
 
     void Update()
@@ -142,5 +148,19 @@ public class Player : MonoBehaviour
     public int GetDirection()
     {
         return direction;
+    }
+
+    void Hit()
+    {
+        if (GetComponent<Health>().GetCurrentHealth() > 0)
+        {
+            int randIndex = UnityEngine.Random.Range(0, hurtSounds.Count);
+            AudioManager.Instance.PlaySound(hurtSounds[randIndex]);
+        }
+    }
+
+    void Die()
+    {
+        AudioManager.Instance.PlaySound(deathSound);
     }
 }
