@@ -10,6 +10,10 @@ public class SlimeBallProjectile : MonoBehaviour
 
     Rigidbody2D rb;
 
+    int direction = 1;
+
+    public AudioClip splatSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,12 @@ public class SlimeBallProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(speed, rb.velocity.y);
+        rb.velocity = new Vector2(speed * direction, rb.velocity.y);
+    }
+
+    public void SetDirection(int direction)
+    {
+        this.direction = direction;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -36,6 +45,7 @@ public class SlimeBallProjectile : MonoBehaviour
         spawnPos.y = Mathf.Ceil(spawnPos.y);
 
         WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SLIME_TRAP, spawnPos);
+        AudioManager.Instance.PlaySound(splatSound);
 
         Destroy(gameObject);
     }

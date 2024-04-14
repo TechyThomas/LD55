@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        Ability startAbility = new Sword();
+        Ability startAbility = new SlimeBall();
         currentAbility = startAbility;
         Inventory.Instance.AddAbility(startAbility);
 
