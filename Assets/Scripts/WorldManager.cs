@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class WorldManager : MonoBehaviour
 {
-    public static WorldManager instance;
-
-    void Awake()
+    public static WorldManager _instance;
+    public static WorldManager Instance
     {
-        if (instance == null)
+        get
         {
-            instance = this;
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<WorldManager>();
+            }
+
+            return _instance;
         }
     }
 

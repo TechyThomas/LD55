@@ -4,44 +4,44 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public static Inventory instance;
+    public static Inventory _instance;
+    public static Inventory Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<Inventory>();
+            }
 
-    public List<Ability> abilities;
-    public List<Ability> hotbarAbilities;
+            return _instance;
+        }
+    }
+
+    public List<Ability> abilities = new List<Ability>();
+    public List<Ability> hotbarAbilities = new List<Ability>();
 
     int maxSlots = 3;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
-        abilities = new List<Ability>();
-        hotbarAbilities = new List<Ability>();
-    }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             if (hotbarAbilities.Count < 1 || hotbarAbilities[0] == null) return;
-            Player.instance.SetAbility(hotbarAbilities[0]);
-            UI_Hotbar.instance.SetActive(0);
+            Player.Instance.SetAbility(hotbarAbilities[0]);
+            UI_Hotbar.Instance.SetActive(0);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             if (hotbarAbilities.Count < 2 || hotbarAbilities[1] == null) return;
-            Player.instance.SetAbility(hotbarAbilities[1]);
-            UI_Hotbar.instance.SetActive(1);
+            Player.Instance.SetAbility(hotbarAbilities[1]);
+            UI_Hotbar.Instance.SetActive(1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (hotbarAbilities.Count < 3 || hotbarAbilities[2] == null) return;
-            Player.instance.SetAbility(hotbarAbilities[2]);
-            UI_Hotbar.instance.SetActive(2);
+            Player.Instance.SetAbility(hotbarAbilities[2]);
+            UI_Hotbar.Instance.SetActive(2);
         }
     }
 
@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
         if (hotbarAbilities.Count < maxSlots)
         {
             hotbarAbilities.Add(ability);
-            UI_Hotbar.instance.SetSlot(hotbarAbilities.Count - 1, ability);
+            UI_Hotbar.Instance.SetSlot(hotbarAbilities.Count - 1, ability);
         }
     }
 }

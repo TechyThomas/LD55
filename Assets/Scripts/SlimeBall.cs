@@ -26,7 +26,7 @@ public class SlimeBall : Ability
 
         base.Attack();
 
-        GameObject attackGO = WorldManager.instance.SpawnPrefab(PrefabDatabase.instance.SLIME_BALL, Player.instance.GetPosition() + new Vector2(1f, 0));
+        GameObject attackGO = WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SLIME_BALL, Player.Instance.GetPosition() + new Vector2(1f, 0));
 
         currentBalls++;
     }

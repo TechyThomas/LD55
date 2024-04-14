@@ -25,7 +25,7 @@ public class CameraManager : MonoBehaviour
             return;
         }
 
-        Vector3 playerPos = Player.instance.GetPosition();
+        Vector3 playerPos = Player.Instance.GetPosition();
 
         Vector3 screenToWorldTopRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0f, 0f));
         Vector3 screenToWorldBottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0f, Screen.height, 0f));

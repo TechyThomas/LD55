@@ -7,17 +7,24 @@ using UnityEngine;
 
 public class UI_Hotbar : MonoBehaviour
 {
-    public static UI_Hotbar instance;
+    public static UI_Hotbar _instance;
+    public static UI_Hotbar Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<UI_Hotbar>();
+            }
+
+            return _instance;
+        }
+    }
 
     public List<TextMeshProUGUI> slotText;
 
     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
         for (int i = 0; i < slotText.Count; i++)
         {
             slotText[i].text = (i + 1) + ".";

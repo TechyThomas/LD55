@@ -15,7 +15,7 @@ public class SwordAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = Player.instance.GetPosition() + new Vector2(1f, 0f);
+        Vector2 pos = Player.Instance.GetPosition() + new Vector2(1f, 0f);
         transform.position = pos;
     }
 

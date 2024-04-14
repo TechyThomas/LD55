@@ -17,7 +17,19 @@ public class Player : MonoBehaviour
 
     Ability currentAbility;
 
-    public static Player instance;
+    public static Player _instance;
+    public static Player Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<Player>();
+            }
+
+            return _instance;
+        }
+    }
 
     float attackCooldown = 0f;
     bool canAttack = true;
@@ -30,16 +42,8 @@ public class Player : MonoBehaviour
 
         Ability startAbility = new Sword();
         currentAbility = startAbility;
-        Inventory.instance.AddAbility(startAbility);
-        UI_Hotbar.instance.SetActive(0);
-    }
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        Inventory.Instance.AddAbility(startAbility);
+        UI_Hotbar.Instance.SetActive(0);
     }
 
     void Update()

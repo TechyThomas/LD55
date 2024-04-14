@@ -13,7 +13,7 @@ public class SlimeBoss : EnemyBoss
 
         if (spawnTimer <= 0f)
         {
-            WorldManager.instance.SpawnPrefab(PrefabDatabase.instance.SLIME_ENEMY, transform.position + new Vector3(-3f, 0, 0));
+            WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SLIME_ENEMY, transform.position + new Vector3(-3f, 0, 0));
             spawnTimer = spawnRate;
         }
     }
@@ -22,6 +22,6 @@ public class SlimeBoss : EnemyBoss
     {
         base.GivePlayerAbility();
 
-        Inventory.instance.AddAbility(new SlimeBall());
+        Inventory.Instance.AddAbility(new SlimeBall());
     }
 }

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class PrefabDatabase : MonoBehaviour
 {
-    public static PrefabDatabase instance;
-
-    void Awake()
+    public static PrefabDatabase _instance;
+    public static PrefabDatabase Instance
     {
-        if (instance == null)
+        get
         {
-            instance = this;
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<PrefabDatabase>();
+            }
+
+            return _instance;
         }
     }
 

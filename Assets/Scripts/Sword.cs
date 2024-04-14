@@ -16,8 +16,8 @@ public class Sword : Ability
     {
         base.Attack();
 
-        Vector2 swordSpawnPos = Player.instance.GetPosition() + new Vector2(1f, 0f);
-        GameObject attackGO = WorldManager.instance.SpawnPrefab(PrefabDatabase.instance.SWORD_ATTACK, swordSpawnPos);
+        Vector2 swordSpawnPos = Player.Instance.GetPosition() + new Vector2(1f, 0f);
+        GameObject attackGO = WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SWORD_ATTACK, swordSpawnPos);
 
         attackGO.GetComponent<SwordAttack>().Attack(attack);
     }

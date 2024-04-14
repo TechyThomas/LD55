@@ -23,14 +23,14 @@ public class Enemy : MonoBehaviour
 
     void Move()
     {
-        if (!canMove || rb == null || Player.instance == null)
+        if (!canMove || rb == null || Player.Instance == null)
         {
             return;
         }
 
         int direction = 1;
 
-        Vector2 distance = Player.instance.GetPosition() - rb.position;
+        Vector2 distance = Player.Instance.GetPosition() - rb.position;
 
         if (distance.x < 0)
         {
