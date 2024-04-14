@@ -16,9 +16,13 @@ public class Enemy : MonoBehaviour
 
     bool canMove = true;
 
+    public List<AudioClip> hurtSounds;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        GetComponent<Health>().onHit = Hit;
     }
 
     void Update()
@@ -61,7 +65,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                cooldownTimer = attackCooldown;
+                cooldownTimer = 0f;
             }
         }
     }
@@ -126,6 +130,12 @@ public class Enemy : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, agroRadius);
+    }
+
+    void Hit()
+    {
+        int randIndex = UnityEngine.Random.Range(0, hurtSounds.Count);
+        AudioManager.Instance.PlaySound(hurtSounds[randIndex]);
     }
 }
 

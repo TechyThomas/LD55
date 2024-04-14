@@ -6813,34 +6813,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 729657358255796897, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968307652807965287, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_Size.x
-      value: 1.18
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968307652807965287, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_Size.y
-      value: 1.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2968307652807965287, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4447968351368145201, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4447968351368145201, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4447968351368145201, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 4930100726514854398, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.09
@@ -6884,6 +6856,10 @@ PrefabInstance:
     - target: {fileID: 8653655959761903379, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 8653655959761903379, guid: 293592c9996c4eb42a40e7bdf9239f86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
