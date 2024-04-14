@@ -96,6 +96,11 @@ public class Player : MonoBehaviour
 
         float moveX = Input.GetAxisRaw("Horizontal");
 
+        if (Physics2D.CapsuleCast(rb.position, new Vector2(0.5f, 1.5f), CapsuleDirection2D.Vertical, 0, new Vector2(moveX, 0f), 0.2f, groundLayer))
+        {
+            moveX = 0;
+        }
+
         if (moveX < 0)
         {
             direction = -1;

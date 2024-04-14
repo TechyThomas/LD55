@@ -18,6 +18,8 @@ public class PrefabDatabase : MonoBehaviour
         }
     }
 
+    public LayerMask GROUND_LAYER;
+
     public GameObject SWORD_ATTACK;
 
     public GameObject SLIME_ENEMY;
