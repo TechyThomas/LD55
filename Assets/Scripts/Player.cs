@@ -43,7 +43,10 @@ public class Player : MonoBehaviour
         Ability startAbility = new Sword();
         currentAbility = startAbility;
         Inventory.Instance.AddAbility(startAbility);
+
         UI_Hotbar.Instance.SetActive(0);
+        UI_Hotbar.Instance.SetSlot(1, null);
+        UI_Hotbar.Instance.SetSlot(2, null);
     }
 
     void Update()
