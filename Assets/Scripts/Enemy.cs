@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
     public float attackCooldown = 2f;
     float cooldownTimer;
 
-    Rigidbody2D rb;
-    Player foundPlayer;
+    protected Rigidbody2D rb;
+    protected Player foundPlayer;
 
     bool canMove = true;
 
@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        foundPlayer = null;
 
         RaycastHit2D[] hits = Physics2D.CircleCastAll(rb.position, agroRadius, Vector2.up, 0f, Player.Instance.GetLayerMask());
         foreach (RaycastHit2D hit in hits)
@@ -68,6 +69,13 @@ public class Enemy : MonoBehaviour
                 cooldownTimer = 0f;
             }
         }
+
+        EnemyUpdate();
+    }
+
+    public virtual void EnemyUpdate()
+    {
+
     }
 
     void PlayerTargetAI()
