@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -97,7 +97,7 @@ public class Player : MonoBehaviour
 
         if (attackCooldown <= 0f)
         {
-            if (Input.GetMouseButtonDown(0) && currentAbility != null)
+            if (Input.GetButtonDown("Attack") && currentAbility != null)
             {
                 attackCooldown = currentAbility.cooldown;
                 currentAbility.Attack();

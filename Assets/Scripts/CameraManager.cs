@@ -33,8 +33,6 @@ public class CameraManager : MonoBehaviour
         float cameraWidthOffset = screenToWorldTopRight.x - screenToWorldBottomLeft.x;
         float cameraHeightOffset = screenToWorldBottomLeft.y - screenToWorldTopRight.y;
 
-        Debug.Log(playerPos.x + ", " + screenToWorldBottomLeft.x + ", " + screenToWorldTopRight.x);
-
         if (playerPos.x >= screenToWorldTopRight.x)
         {
             targetCameraPos.x += cameraWidthOffset;
@@ -46,19 +44,20 @@ public class CameraManager : MonoBehaviour
             isMoving = true;
         }
 
-        // if (playerPos.y >= screenToWorldTopRight.y)
-        // {
-        //     cameraPos.y += cameraHeightOffset;
-        // }
-        // else if (playerPos.y <= screenToWorldBottomLeft.y)
-        // {
-        //     cameraPos.y -= cameraHeightOffset;
-        // }
+        if (playerPos.y >= screenToWorldBottomLeft.y)
+        {
+            targetCameraPos.y += cameraHeightOffset;
+            isMoving = true;
+        }
+        else if (playerPos.y <= screenToWorldTopRight.y)
+        {
+            targetCameraPos.y -= cameraHeightOffset;
+            isMoving = true;
+        }
     }
 
     void FixedUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, targetCameraPos, moveSpeed * Time.fixedDeltaTime);
-        // transform.position = Vector3.MoveTowards(transform.position, targetCameraPos, moveSpeed * Time.fixedDeltaTime);
     }
 }
