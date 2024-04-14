@@ -30,5 +30,6 @@ public class SlimeBoss : EnemyBoss
         base.GivePlayerAbility();
 
         Inventory.Instance.AddAbility(new SlimeBall());
+        LevelManager.Instance.SwitchLevel(1);
     }
 }

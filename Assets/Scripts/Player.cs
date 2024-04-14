@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -195,6 +196,7 @@ public class Player : MonoBehaviour
     void Die()
     {
         AudioManager.Instance.PlaySound(deathSound);
+        SceneManager.LoadScene("Game Over");
     }
 
     void Heal()
