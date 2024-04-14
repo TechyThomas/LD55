@@ -15,7 +15,20 @@ public class SwordAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = Player.Instance.GetPosition() + new Vector2(1f, 0f);
+        int playerDir = Player.Instance.GetDirection();
+        Vector2 pos = Player.Instance.GetPosition() + new Vector2(1f * playerDir, 0f);
+
+        GetComponentInChildren<Animator>().SetInteger("Direction", playerDir);
+
+        if (playerDir < 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+        else if (playerDir > 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+
         transform.position = pos;
     }
 

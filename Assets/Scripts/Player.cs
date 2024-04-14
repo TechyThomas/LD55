@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     float attackCooldown = 0f;
     bool canAttack = true;
 
+    int direction = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +65,20 @@ public class Player : MonoBehaviour
 
     void MovePlayer()
     {
-        rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, rb.velocity.y);
+        float moveX = Input.GetAxisRaw("Horizontal");
+
+        if (moveX < 0)
+        {
+            direction = -1;
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+        else if (moveX > 0)
+        {
+            direction = 1;
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+
+        rb.velocity = new Vector2(moveX * speed, rb.velocity.y);
     }
 
     void Jump()
@@ -122,5 +137,10 @@ public class Player : MonoBehaviour
         int layerMask = 1 << gameObject.layer;
 
         return layerMask;
+    }
+
+    public int GetDirection()
+    {
+        return direction;
     }
 }
