@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     }
 
     float attackCooldown = 0f;
-    bool canAttack = true;
+    bool canMove = true;
 
     int direction = 1;
 
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-        Ability startAbility = new SlimeBall();
+        Ability startAbility = new Sword();
         currentAbility = startAbility;
         Inventory.Instance.AddAbility(startAbility);
 
@@ -71,6 +71,11 @@ public class Player : MonoBehaviour
 
     void MovePlayer()
     {
+        if (!canMove)
+        {
+            return;
+        }
+
         float moveX = Input.GetAxisRaw("Horizontal");
 
         if (moveX < 0)
@@ -89,6 +94,11 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        if (!canMove)
+        {
+            return;
+        }
+
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
@@ -162,5 +172,11 @@ public class Player : MonoBehaviour
     void Die()
     {
         AudioManager.Instance.PlaySound(deathSound);
+    }
+
+    public void SetMove(bool canMove)
+    {
+        this.canMove = canMove;
+        rb.isKinematic = !canMove;
     }
 }
