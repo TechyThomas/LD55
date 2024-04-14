@@ -6,7 +6,8 @@ using UnityEngine;
 public class SlimeBallProjectile : MonoBehaviour
 {
     public float speed = 10f;
-    float power = 3f;
+    public float liftPower = 3f;
+    public float throwPower = 10f;
 
     Rigidbody2D rb;
 
@@ -18,13 +19,16 @@ public class SlimeBallProjectile : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(power * Vector2.up, ForceMode2D.Impulse);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Throw()
     {
-        rb.velocity = new Vector2(speed * direction, rb.velocity.y);
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        rb.AddForce(new Vector2(throwPower * direction, liftPower), ForceMode2D.Impulse);
     }
 
     public void SetDirection(int direction)

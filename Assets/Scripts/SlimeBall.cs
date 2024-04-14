@@ -17,8 +17,6 @@ public class SlimeBall : Ability
 
     public override void Attack()
     {
-        Debug.Log(currentBalls);
-
         if (currentBalls >= maxBalls)
         {
             return;
@@ -30,6 +28,7 @@ public class SlimeBall : Ability
 
         GameObject attackGO = WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SLIME_BALL, Player.Instance.GetPosition() + new Vector2(1f * playerDir, 0));
         attackGO.GetComponent<SlimeBallProjectile>().SetDirection(playerDir);
+        attackGO.GetComponent<SlimeBallProjectile>().Throw();
 
         currentBalls++;
     }
