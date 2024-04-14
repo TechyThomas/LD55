@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
     int direction = 1;
 
     public List<AudioClip> hurtSounds;
+    public AudioClip healSound;
     public AudioClip deathSound;
 
 
@@ -55,6 +56,7 @@ public class Player : MonoBehaviour
 
         GetComponent<Health>().onHit += Hit;
         GetComponent<Health>().onDeath += Die;
+        GetComponent<Health>().onHeal += Heal;
     }
 
     void Update()
@@ -172,6 +174,11 @@ public class Player : MonoBehaviour
     void Die()
     {
         AudioManager.Instance.PlaySound(deathSound);
+    }
+
+    void Heal()
+    {
+        AudioManager.Instance.PlaySound(healSound);
     }
 
     public void SetMove(bool canMove)

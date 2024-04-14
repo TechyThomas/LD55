@@ -7,6 +7,11 @@ public class SlimeBoss : EnemyBoss
     float spawnRate = 2f;
     float spawnTimer = 0f;
 
+    public SlimeBoss()
+    {
+        bossName = "Slime Boss";
+    }
+
     void Update()
     {
         spawnTimer -= Time.deltaTime;

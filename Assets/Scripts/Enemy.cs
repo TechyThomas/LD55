@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         GetComponent<Health>().onHit = Hit;
+        GetComponent<Health>().onDeath = OnDeath;
     }
 
     void Update()
@@ -142,8 +143,18 @@ public class Enemy : MonoBehaviour
 
     void Hit()
     {
-        int randIndex = UnityEngine.Random.Range(0, hurtSounds.Count);
+        int randIndex = Random.Range(0, hurtSounds.Count);
         AudioManager.Instance.PlaySound(hurtSounds[randIndex]);
+    }
+
+    void OnDeath()
+    {
+        int random = Random.Range(0, 100);
+
+        if (random <= 5)
+        {
+            Player.Instance.GetComponent<Health>().Heal(10);
+        }
     }
 }
 

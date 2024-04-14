@@ -14,6 +14,9 @@ public class Health : MonoBehaviour
     public delegate void OnHit();
     public OnHit onHit;
 
+    public delegate void OnHeal();
+    public OnHeal onHeal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +35,11 @@ public class Health : MonoBehaviour
         if (currentHealth > health)
         {
             currentHealth = health;
+        }
+
+        if (onHeal != null)
+        {
+            onHeal();
         }
     }
 
