@@ -9,7 +9,7 @@ public class SlimeBoss : EnemyBoss
 
     public SlimeBoss()
     {
-        bossName = "Slime Boss";
+        bossName = "Sticky Thing";
     }
 
     void Update()

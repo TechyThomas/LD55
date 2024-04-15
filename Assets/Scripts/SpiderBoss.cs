@@ -9,7 +9,7 @@ public class SpiderBoss : EnemyBoss
 
     public SpiderBoss()
     {
-        bossName = "Spider Boss";
+        bossName = "Hairy Legs";
     }
 
     void Update()
@@ -30,5 +30,6 @@ public class SpiderBoss : EnemyBoss
         base.GivePlayerAbility();
 
         Inventory.Instance.AddAbility(new WebAbility());
+        LevelManager.Instance.SwitchLevel(1);
     }
 }
