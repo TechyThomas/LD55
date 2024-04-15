@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6468000809778934397}
-  - component: {fileID: 573601927284124436}
+  - component: {fileID: 3397223942554737866}
   - component: {fileID: 2346617199332071837}
   - component: {fileID: 5143481498151118232}
   - component: {fileID: 8136911604031631299}
@@ -36,8 +36,8 @@ Transform:
   - {fileID: 5183619674054163553}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &573601927284124436
-BoxCollider2D:
+--- !u!70 &3397223942554737866
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -68,19 +68,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.15}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.7}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -0.09}
+  m_Size: {x: 0.9, y: 0.62}
+  m_Direction: 0
 --- !u!50 &2346617199332071837
 Rigidbody2D:
   serializedVersion: 4
@@ -123,7 +113,7 @@ MonoBehaviour:
   aiType: 1
   speed: 5
   agroRadius: 5
-  attack: 6
+  attack: 5
   attackCooldown: 2
   hurtSounds:
   - {fileID: 8300000, guid: 95614b380081f99488ad273aaa8e648f, type: 3}

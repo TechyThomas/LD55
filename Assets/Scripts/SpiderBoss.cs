@@ -18,7 +18,7 @@ public class SpiderBoss : EnemyBoss
 
         if (spawnTimer <= 0f)
         {
-            GameObject slimeGO = WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SPIDER_ENEMY, transform.position + new Vector3(0, -2f, 0));
+            GameObject slimeGO = WorldManager.Instance.SpawnPrefab(PrefabDatabase.Instance.SPIDER_ENEMY, transform.position + new Vector3(0, 0f, 0));
             slimeGO.GetComponent<Enemy>().aiType = EnemyAIType.PLAYER_TARGET;
 
             spawnTimer = spawnRate;

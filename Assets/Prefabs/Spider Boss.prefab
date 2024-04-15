@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8035872951965144431}
   - component: {fileID: 7029222827047952213}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5033309688696652555}
   - component: {fileID: 227266072834351858}
   - component: {fileID: 409980374989274140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spider Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
