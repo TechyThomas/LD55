@@ -207,4 +207,5 @@ MonoBehaviour:
   rotSpeed: 500
   throwPower: 10
   liftPower: 4
+  damage: 5
   boneGraphic: {fileID: 9160153709922353313}

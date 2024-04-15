@@ -23,7 +23,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        SwitchLevel(0);
+        // SwitchLevel(0);
     }
 
     public void SwitchLevel(int levelIndex)

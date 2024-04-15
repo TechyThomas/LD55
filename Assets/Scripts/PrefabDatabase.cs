@@ -27,4 +27,6 @@ public class PrefabDatabase : MonoBehaviour
     public GameObject SLIME_TRAP;
 
     public GameObject SPIDER_ENEMY;
+
+    public GameObject SKELETON_ENEMY;
 }

@@ -207,9 +207,10 @@ MonoBehaviour:
   aiType: 1
   speed: 5
   agroRadius: 7
-  attack: 15
+  attack: 10
   attackCooldown: 2
-  hurtSounds: []
+  hurtSounds:
+  - {fileID: 8300000, guid: efe6af3659edbcc4684ccff7fc2379ac, type: 3}
   bonePrefab: {fileID: 2873542180958010984, guid: 8565dbc64d5939f4bbc5bc5fd0401658, type: 3}
   boneCooldown: 1
 --- !u!114 &8454377587310545123
